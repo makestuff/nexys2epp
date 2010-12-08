@@ -1,0 +1,31 @@
+A simple utility for reading and writing to and from EPP registers in an FPGA design based on
+dpimref.vhd running on a Digilent Nexys2.
+
+The project build assumes a directory structure like this:
+
+src
+|
++-apps
+| |
+| +-nexys2epp
+|
++-libs
+|
++-3rd
+
+*** BUILDING ON LINUX ***
+
+make -f Makefile.linux
+
+USAGE
+
+To write 0x00 to register 0:
+    printf "\0" | ./nexys2epp -w -l1 -a0
+To write 524288 zeros to register 3:
+    cat /dev/zero | ./nexys2epp -w -l524288 -a3
+To write the first 512 bytes from the file "sonic1.bin" to register 3:
+    ./nexys2epp -w -fsonic1.bin -l512 -a3
+To write all the data from the file "sonic1.bin" to register 3:
+    ./nexys2epp -w -fsonic1.bin -a3
+To read register 3 1024 times and write the result to out.bin:
+    ./nexys2epp -r -l1024 -a3 -f out.bin
