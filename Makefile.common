@@ -15,15 +15,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ../../libs/argtypes:
-	wget --no-check-certificate http://github.com/makestuff/argtypes/tarball/master
-	tar xvzf master
-	rm master
+	wget -O argtypes.tgz --no-check-certificate http://github.com/makestuff/argtypes/tarball/master
+	tar xvzf argtypes.tgz
+	rm argtypes.tgz
 	mkdir -p ../../libs
 	mv makestuff-argtypes* ../../libs/argtypes
 
 ../../libs/usbwrap:
-	wget --no-check-certificate http://github.com/makestuff/usbwrap/tarball/master
-	tar xvzf master
-	rm master
+	wget -O usbwrap.tgz --no-check-certificate http://github.com/makestuff/usbwrap/tarball/master
+	tar xvzf usbwrap.tgz
+	rm usbwrap.tgz
 	mkdir -p ../../libs
 	mv makestuff-usbwrap* ../../libs/usbwrap
